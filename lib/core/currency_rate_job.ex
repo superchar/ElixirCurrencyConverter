@@ -1,7 +1,7 @@
-defmodule Core.RefreshingJob do
+defmodule Core.CurrencyRateJob do
   use GenServer
 
-  defstruct timeout: 6000, callback: nil, rate: nil, name: nil
+  defstruct timeout: 60000, callback: nil, rate: nil, name: nil
 
   def start_link(%__MODULE__{name: name} = args) do
     GenServer.start_link(__MODULE__, args, name: name)
